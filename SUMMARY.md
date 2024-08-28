@@ -4,10 +4,14 @@
 
 ## Getting Started
 * [Installation](getting-started/installation.md)
+* [Basic Building Blocks](getting-started/basic-building-blocks.md)
 
 ## Concepts
 
 * [Overview](concepts/overview.md)
+* [Combining Multiple Embeddings for Better Retrieval Outcomes](concepts/multiple-embeddings.md)
+* [Dynamic Parameters/Query Time weights](concepts/dynamic-parameters.md)
+
 
 
 ## Use Cases

@@ -1,6 +1,5 @@
 ---
 description: >-
-  A compute framework for building Search, RAG, Recommendations and Analytics over complex (structured+unstructured) data, with ultra-modal vector embeddings.
 icon: hand-wave
 ---
 
@@ -9,7 +8,7 @@ icon: hand-wave
 Superlinked is a compute framework for your information retrieval and feature engineering systems, focused on turning **complex** (structured + unstructured) data into ultra-modal vector embeddings within your RAG, Search, Recommendations and Analytics stack. Integrate Superlinked into your machine learning stack for custom model performance with pre-trained model convenience.
 
 
-### Discover Superlinked;
+### Discover Superlinked
 
 <table data-view="cards">
 <thead>
@@ -22,28 +21,35 @@ Superlinked is a compute framework for your information retrieval and feature en
         <td>Edit pages, collections, content, and more in GitBook.</td>
         <td></td>
         <td><a href=".gitbook/assets/content-editor.png">content-editor.png</a></td>
-        <td><a href="broken-reference">Broken link</a></td>
+        <td><a href="getting-started/installation.md">link</a></td>
     </tr>
     <tr>
         <td><strong>Concepts</strong></td>
         <td>Edit pages, collections, content, and more in GitBook.</td>
         <td></td>
         <td><a href=".gitbook/assets/content-editor.png">content-editor.png</a></td>
-        <td><a href="broken-reference">Broken link</a></td>
+        <td><a href="concepts/overview.md">link</a></td>
+    </tr>
+    <tr>
+        <td><strong>Features</strong></td>
+        <td>Edit pages, collections, content, and more in GitBook.</td>
+        <td></td>
+        <td><a href=".gitbook/assets/content-editor.png">content-editor.png</a></td>
+        <td><a href="https://github.com/superlinked/superlinked/tree/main/notebook/feature" target="_blank">link</a></td>
     </tr>
     <tr>
         <td><strong>Use Cases</strong></td>
         <td>Edit pages, collections, content, and more in GitBook.</td>
         <td></td>
         <td><a href=".gitbook/assets/content-editor.png">content-editor.png</a></td>
-        <td><a href="broken-reference">Broken link</a></td>
+        <td><a href="use-cases/overview.md">link</a></td>
     </tr>
     <tr>
         <td><strong>API Reference</strong></td>
         <td>Edit pages, collections, content, and more in GitBook.</td>
         <td></td>
         <td><a href=".gitbook/assets/content-editor.png">content-editor.png</a></td>
-        <td><a href="broken-reference">Broken link</a></td>
+        <td><a href="reference/overview.md">link</a></td>
     </tr>
     
 </tbody>
