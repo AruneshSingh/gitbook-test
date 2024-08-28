@@ -16,6 +16,11 @@
 
 ## Use Cases
 * [Overview](use-cases/overview.md)
+* [Semantic Search - News](use-cases/semantic-search-news.md)
+* [Semantic Search - Movies](use-cases/semantic-search-movies.md)
+* [RecSys - Ecommerce](use-cases/recsys-ecomm.md)
+* [RAG - HR](use-cases/rag-hr.md)
+* [Analytics - User Acquisition](use-cases/analytics-user-acquisition.md)
 
 
 ## Run in Production
@@ -25,6 +30,18 @@
 ## API Reference
 * [Overview](reference/overview.md)
 * [Common](reference/common/)
+  * [DAG](reference/common/dag)
+      * [period_time](reference/common/dag/period_time.md)
+  * [Parser](reference/common/parser)
+    * [data_parser](reference/common/parser/data_parser.md)
+    * [dataframe_parser](reference/common/parser/dataframe_parser.md)
+    * [json_parser](reference/common/parser/json_parser.md)
+  * [Schema](reference/common/schema)
+    * [event_schema_object](reference/common/schema/event_schema_object.md)
+    * [event_schema](reference/common/schema/event_schema.md)
+    * [id_schema_object](reference/common/schema/id_schema_object.md)
+    * [schema_object](reference/common/schema/schema_object.md)
+    * [schema](reference/common/schema/schema.md)
 * [DSL](reference/dsl/)
 
 ## Help & FAQ

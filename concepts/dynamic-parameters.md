@@ -6,8 +6,8 @@ icon: dumbbell
 # Query time weights & why you should care
 
 Getting quality results from vector database queries isn’t easy. Our experience in machine learning deployment for production use cases has revealed two basic things about representing data:
-- 1. the richer your source dataset, the better your chances of getting good results, provided your embeddings sufficiently represent your dataset
-- 2. different use cases make different parts of your overall dataset more important
+1. the richer your source dataset, the better your chances of getting good results, provided your embeddings sufficiently represent your dataset
+2. different use cases make different parts of your overall dataset more important
 Any system that achieves efficient, high quality retrieval has to capture the richness of your source dataset, and prioritize the parts of your data that fit your use case.
 
 At Superlinked, we use our Spaces class (discussed in detail [here](link to BB article (1)) to create embeddings for different data attributes rather than using a text embedding model to ingest all of the data we have on an entity indiscriminately as single piece of text. By concatenating these attribute-specific vectors into a rich multimodal vector, we can achieve better results on the first search, obviating the need for time-consuming reranking and complex custom layers later on.
@@ -19,8 +19,8 @@ Let’s walk through how you can use Superlinked to achieve quality retrieval, b
 ## Two ways to weight the query - definition
 
 Our system lets you apply weights in two different ways:
-- 1. setting weights at query definition - lets you experiment and optimize without re-embedding your dataset
-- 2. setting weights when running the query - lets you (data scientist or user) fine-tune even after query definition
+1. setting weights at query definition - lets you experiment and optimize without re-embedding your dataset
+2. setting weights when running the query - lets you (data scientist or user) fine-tune even after query definition
 
 ### Weighting when you define the query
 
@@ -101,7 +101,7 @@ like_query = (
 )
 ```
 
-Running the body_query…
+Running the `body_query` …
 ```python
 body_result = app.query(body_query)
 
@@ -109,9 +109,10 @@ body_result.to_pandas()
 ```
 
 …produces the following result:
+<Insert Image>
 
 
-While running the like_query…
+While running the `like_query` …
 ```python
 like_result = app.query(like_query)
 
@@ -119,6 +120,7 @@ like_result.to_pandas()
 ```
 
 ranks our results oppositely:
+<insert image>
 
 
 By weighting when you define your query, you can set up searches that emphasize more relevant vector parts, without needing to re-embed your data.
@@ -185,8 +187,8 @@ like_based_result.to_pandas()
 ## In sum
 
 Superlinked Spaces enable two different kinds of query time weighting, 1) weighting when defining the query, and 2) weighting when executing the query, each with its own associated benefits, and no need to rerank, build custom layers, or re-embed.
-- 1) Because Superlinked permits you to assign weights when defining your queries, you can experiment and optimize without having to re-embed your dataset.
-- 2) Assigning weights using dynamic parameters when you run the query offers the data scientist / user additional optimization control over what counts as relevant, even after query definition.
+1. Because Superlinked permits you to assign weights when defining your queries, you can experiment and optimize without having to re-embed your dataset.
+2. Assigning weights using dynamic parameters when you run the query offers the data scientist / user additional optimization control over what counts as relevant, even after query definition.
 
 
 Now it’s your turn to run or experiment with the code in the notebooks: 

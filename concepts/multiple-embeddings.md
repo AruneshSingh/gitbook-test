@@ -6,11 +6,11 @@ icon: table
 # Combining multiple embeddings to represent complex data better
 
 Getting quality retrieval results from LLM queries on embedded complex data is no walk in the park. The typical approach looks something like this, and has serious shortcomings:
-- 1. embed all the data you have about an entity as a single piece of text (using a model from a hub like Hugging Face, or your own proprietary model).
+1. embed all the data you have about an entity as a single piece of text (using a model from a hub like Hugging Face, or your own proprietary model).
 Converting all the data you have about an entity directly into a single vector usually fails to capture complex attributes; you lose potentially relevant information.
-- 2. run a vector search to identify X nearest neighbor vectors in order.
+2. run a vector search to identify X nearest neighbor vectors in order.
 Similarity searches on these vectors often produce less than satisfactory results, necessitating reranking.
-- 3. rerank your results using a) additional contextual filters or b) information not in the vector (e.g., filtering out items that are out of stock)
+3. rerank your results using a) additional contextual filters or b) information not in the vector (e.g., filtering out items that are out of stock)
 To get better results, you’ll probably have to add a custom layer to incorporate additional relevant information, and/or rerank using cross-encoders, incurring a latency cost that threatens productionizing; cross-encoders obtain a reranking metric by calculating the similarity of each pair of points individually, which takes a nontrivial amount of time.
 
 Is there a way of achieving quality retrieval without the data loss and latency cost of the typical approach (above)? Yes!
@@ -22,15 +22,16 @@ To illustrate the Superlinked approach, let’s take a look at a simple example.
 ## A more efficient, reliable approach to complex search
 
 The pieces of information you have about any entity are often complex and usually include more than one attribute. Let’s take a very simple example. Say your data source contains two paragraphs, each with a certain number of likes:
-- 1. “Glorious animals live in the wilderness." like_count = 10
-- 2. "Growing computation power enables advancements in AI." like_count = 75
+1. “Glorious animals live in the wilderness." like_count = 10
+2. "Growing computation power enables advancements in AI." like_count = 75
 
 Each of the paragraph data’s modalities (i.e., the paragraph text and the like_count) can be captured individually in separate embeddings and then concatenated into a single multimodal vector that better represents the original data.
 
 By combining this complex structured and unstructured data about each entity into a single vector in your vector index, you take advantage of the power your vector database, which is optimized for vector search. As a result, you can achieve:
 - better quality retrieval results: your searches can retrieve results that are more complete and relevant than when your embeddings did not effectively represent different attributes of the same entity; see Superlinked’s research outcomes on this in VectorHub:
-> Combining semantic embeddings with graph embeddings to improve the performance of LLMs on relational data 
-> Combining multimodal text and image embeddings using aligned encoders to increase retrieval performance
+> [Combining semantic embeddings with graph embeddings to improve the performance of LLMs on relational data](https://superlinked.com/vectorhub/articles/answering-questions-knowledge-graph-embeddings)
+
+> [Combining multimodal text and image embeddings using aligned encoders to increase retrieval performance](https://superlinked.com/vectorhub/articles/retrieval-from-image-text-modalities)
 - efficiency savings: because you get better results, you’re less likely to require time-consuming reranking, thereby reducing the processing time for vector retrieval by a factor of 10 (instead of hundreds of milliseconds, your retrieval takes only 10s of milliseconds)
 
 But how do we both represent all the complex attributes of a given entity and combine them into a single vector that’s easily searchable in a vector index? 
