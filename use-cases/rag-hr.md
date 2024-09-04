@@ -40,5 +40,21 @@ which one is more relevant to our query.
 ### Try it out on Colab
 
 {% embed url="https://colab.research.google.com/github/superlinked/superlinked/blob/main/notebook/rag_hr_knowledgebase.ipynb#scrollTo=e9fb5d47-d6b9-4cdd-b2b4-80dda4eef996" %}
-HR Chatbot using Retrieval Augmented Generation
 {% endembed %}
+
+<table data-view="cards">
+<thead>
+<tr><th></th><th></th><th data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref">
+</th></tr>
+</thead>
+<tbody>
+    <tr>
+        <td><strong>Getting Started</strong></td>
+        <td>Edit pages, collections, content, and more in GitBook.</td>
+        <td></td>
+        <td><a href=".gitbook/assets/content-editor.png">content-editor.png</a></td>
+        <td><a href="https://colab.research.google.com/github/superlinked/superlinked/blob/main/notebook/rag_hr_knowledgebase.ipynb#scrollTo=e9fb5d47-d6b9-4cdd-b2b4-80dda4eef996">link</a></td>
+    </tr>
+    
+</tbody>
+</table>
