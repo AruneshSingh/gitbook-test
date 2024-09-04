@@ -3,6 +3,7 @@
 * [Welcome](README.md)
 
 ## Getting Started
+* [What is Superlinked](getting-started/what-is-superlinked.md)
 * [Installation](getting-started/installation.md)
 * [Basic Building Blocks](getting-started/basic-building-blocks.md)
 
