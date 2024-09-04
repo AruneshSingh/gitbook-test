@@ -109,7 +109,7 @@ result.to_pandas()
 
 Here's our result.
 
-![Query result](../assets/use_cases/basic_building_blocks/bb_query-results.png)
+![Query result](../.gitbook/assets/basicbb_query1.png)
 
 
 Changing the query text further demonstrates how our system produces results that are relevant to each query.
@@ -119,7 +119,7 @@ result = app.query(query, query_text="This is a happy dog")
 result.to_pandas()
 ```
 
-![Second query result](../assets/use_cases/basic_building_blocks/bb_query-results-2.png)
+![Second query result](../.gitbook/assets/basicbb_query2.png)
 
 
 ## In sum
