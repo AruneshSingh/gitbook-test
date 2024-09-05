@@ -1,5 +1,4 @@
 # Table of contents
-
 * [Welcome](README.md)
 
 ## Getting Started
@@ -8,7 +7,6 @@
 * [Basic Building Blocks](getting-started/basic-building-blocks.md)
 
 ## Concepts
-
 * [Overview](concepts/overview.md)
 * [Features](concepts/features.md)
 * [Combining Multiple Embeddings for Better Retrieval Outcomes](concepts/multiple-embeddings.md)
@@ -49,7 +47,6 @@
 * [DSL](reference/dsl/)
 
 ## Help & FAQ
-
 * [Support](help-and-faq/contributing.md)
 * [Discussion](https://github.com/superlinked/superlinked/discussions)
 
