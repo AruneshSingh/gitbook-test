@@ -1,5 +1,5 @@
 ---
-description: Salient features of Superlinked.
+description: Discover the powerful capabilities Superlinked offers..
 icon: list
 ---
 

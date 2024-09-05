@@ -1,5 +1,5 @@
 ---
-description: Learn about fundamental concepts of Superlinked.
+description: Explore the core ideas and principles behind Superlinked's functionality..
 icon: bullseye-arrow
 ---
 

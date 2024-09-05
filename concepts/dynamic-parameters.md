@@ -116,7 +116,8 @@ body_result.to_pandas()
 ```
 
 …produces the following result:
-![](../.gitbook/assets/dynamic-parameters-result1.png)
+
+![Query result 1](../.gitbook/assets/dynamic-parameters-result1.png)
 
 
 While running the `like_query` …
@@ -127,7 +128,8 @@ like_result.to_pandas()
 ```
 
 ranks our results oppositely:
-![](../.gitbook/assets/dynamic-parameters-result1.png)
+
+![Query result 2](../.gitbook/assets/dynamic-parameters-result2.png)
 
 
 By weighting when you define your query, you can set up searches that emphasize more relevant vector parts, without needing to re-embed your data.

@@ -103,8 +103,9 @@ result = app.query(
     query_text="What makes the AI industry go forward?",
 )
 ```
-Here, we query our index to search for the most similar body_space, and surface our results in the appropriate order:
-![](../.gitbook/assets/multiple-embeddings-result.png)
+Here, we query our index to search for the most similar `body_space`, and surface our results in the appropriate order:
+
+![Query result](../.gitbook/assets/multiple-embeddings-result.png)
 
 
 

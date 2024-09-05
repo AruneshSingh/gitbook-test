@@ -1,5 +1,5 @@
 ---
-description: Docstring documentation for Superlinked framework.
+description: Access detailed documentation for Superlinked's components..
 icon: bullseye-arrow
 ---
 

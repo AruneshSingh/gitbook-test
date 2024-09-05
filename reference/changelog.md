@@ -7,9 +7,9 @@ icon: clock-rotate-left
 
 ## [9.22.1] - 2024-08-28
 
-### Framework: v9.12.1 - v9.22.1
-### Server: v9.12.1 - v9.22.0 (running with framework/v9.12.1)
-### Batch: v1.1.0 - v1.1.2
+- #### Framework: v9.12.1 - v9.22.1
+- #### Server: v9.12.1 - v9.22.0 (running with framework/v9.12.1)
+- #### Batch: v1.1.0 - v1.1.2
 
 ### Added
 - Event support in batch: Clients can now batch calculate with events as well, rendering the online and batch systems in feature parity.
@@ -34,9 +34,9 @@ icon: clock-rotate-left
 
 ## [9.12.1] - 2024-08-14
 
-### Framework: v9.7.0 - v9.12.1
-### Server: v9.6.0 - v9.7.0 (running with v9.2.0)
-### Batch: v1.0.2 - v1.1.0
+- #### Framework: v9.7.0 - v9.12.1
+- #### Server: v9.6.0 - v9.7.0 (running with v9.2.0)
+- #### Batch: v1.0.2 - v1.1.0
 
 ### Added
 - Return similarity scores: Now returning similarity scores along with results, allowing clients to better understand the distribution.
@@ -52,9 +52,9 @@ icon: clock-rotate-left
 
 ## [9.7.0] - 2024-08-07
 
-### Framework: v9.7.0
-### Server: v9.6.0
-### Batch: v1.0.2
+- #### Framework: v9.7.0
+- #### Server: v9.6.0
+- #### Batch: v1.0.2
 
 ### Added
 - Bumped sentence-transformers to 3.0.1: Allows experimentation with highest scoring models from mteb leaderboard.
