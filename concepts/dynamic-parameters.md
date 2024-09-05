@@ -10,17 +10,24 @@ Getting quality results from vector database queries isn’t easy. Our experienc
 2. different use cases make different parts of your overall dataset more important
 Any system that achieves efficient, high quality retrieval has to capture the richness of your source dataset, and prioritize the parts of your data that fit your use case.
 
-At Superlinked, we use our Spaces class (discussed in detail [here](link to BB article (1)) to create embeddings for different data attributes rather than using a text embedding model to ingest all of the data we have on an entity indiscriminately as single piece of text. By concatenating these attribute-specific vectors into a rich multimodal vector, we can achieve better results on the first search, obviating the need for time-consuming reranking and complex custom layers later on.
+At Superlinked, we use our Spaces class (discussed in detail [here](multiple-embeddings.md)) to create embeddings for different data attributes rather than using a text embedding model to ingest all of the data we have on an entity indiscriminately as single piece of text. By concatenating these attribute-specific vectors into a rich multimodal vector, we can achieve better results on the first search, obviating the need for time-consuming reranking and complex custom layers later on.
 
 But the other crucial retrieval-improving element in the Superlinked approach is query time weighting. We empower you to prioritize those parts of your data that are most important for your use case/s by keeping all weights on the query side vector - you can experiment and fine-tune your retrieval without having to re-embed and re-index your dataset.
 
 Let’s walk through how you can use Superlinked to achieve quality retrieval, by implementing query time weights - at both query definition and query execution.
 
+**Follow along in these Colabs.**
+{% embed url="https://colab.research.google.com/github/superlinked/superlinked/blob/main/notebook/feature/query_time_weights.ipynb" %}
+{% endembed %}
+
+{% embed url="https://colab.research.google.com/github/superlinked/superlinked/blob/main/notebook/feature/dynamic_parameters.ipynb" %}
+{% endembed %}
+
 ## Two ways to weight the query - definition
 
 Our system lets you apply weights in two different ways:
-1. setting weights at query definition - lets you experiment and optimize without re-embedding your dataset
-2. setting weights when running the query - lets you (data scientist or user) fine-tune even after query definition
+1. **setting weights at query definition** - lets you experiment and optimize without re-embedding your dataset
+2. **setting weights when running the query** - lets you (data scientist or user) fine-tune even after query definition
 
 ### Weighting when you define the query
 
@@ -28,7 +35,7 @@ Superlinked’s Spaces are structured for embedding different attributes of your
 
 Let’s walk through how you set this up in Superlinked, using an example where you define two queries - one that optimizes on paragraph similarity, and another that optimizes on like count.
 
-After installing superlinked (see our notebook, cell 1](https://github.com/superlinked/superlinked/blob/main/notebook/feature/query_time_weights.ipynb)), you import the requisite modules: library, schema-related classes, index class, text_similarity and number spaces, query constructor, and display config (see cell 2). You then define your schema class and two spaces, and build an index on top of your spaces:
+After installing superlinked, you import the requisite modules: library, schema-related classes, index class, text_similarity and number spaces, query constructor, and display config (see cell 2). You then define your schema class and two spaces, and build an index on top of your spaces:
 
 ```python
 @schema
@@ -73,7 +80,7 @@ source.put(
 )
 ```
 
-Now that you have your system set up, you define your queries, a body_query that weights text similarity twice as much as likes, and another like_query that weights likes twice as much as text similarity.
+Now that you have your system set up, you define your queries, a `body_query` that weights text similarity twice as much as likes, and another `like_query` that weights likes twice as much as text similarity.
 
 ```python
 body_query = (
@@ -109,7 +116,7 @@ body_result.to_pandas()
 ```
 
 …produces the following result:
-<Insert Image>
+![](../.gitbook/assets/dynamic-parameters-result1.png)
 
 
 While running the `like_query` …
@@ -120,7 +127,7 @@ like_result.to_pandas()
 ```
 
 ranks our results oppositely:
-<insert image>
+![](../.gitbook/assets/dynamic-parameters-result1.png)
 
 
 By weighting when you define your query, you can set up searches that emphasize more relevant vector parts, without needing to re-embed your data.
@@ -152,7 +159,7 @@ query = (
 ```
 
 It’s time to query!
-You now fill in your placeholder Params with weights, and generate results. To see how different query execution weights alter results, you run two queries. The first, body_based_result, queries by weighting the body_space at 1, and the like_space at 0, favoring the textually similar paragraph:
+You now fill in your placeholder Params with weights, and generate results. To see how different query execution weights alter results, you run two queries. The first, `body_based_result`, queries by weighting the `body_space` at 1, and the `like_space` at 0, favoring the textually similar paragraph:
 
 ```python
 body_based_result = app.query(
@@ -167,7 +174,7 @@ body_based_result.to_pandas()
 
 
 
-Your second query like_based_result reverses this weighting, and favors the most liked paragraph.
+Your second query `like_based_result` reverses this weighting, and favors the most liked paragraph.
 
 ```python
 like_based_result = app.query(

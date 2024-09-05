@@ -23,6 +23,7 @@
 * [RecSys - Ecommerce](use-cases/recsys-ecomm.md)
 * [RAG - HR](use-cases/rag-hr.md)
 * [Analytics - User Acquisition](use-cases/analytics-user-acquisition.md)
+* [Analytics - Keyword Expansion](use-cases/analytics-keyword-expansion.md)
 
 
 ## Run in Production
@@ -31,6 +32,7 @@
 
 ## Reference
 * [Overview](reference/overview.md)
+* [Changelog](reference/changelog.md)
 * [Common](reference/common/)
   * [DAG](reference/common/dag)
       * [period_time](reference/common/dag/period_time.md)
