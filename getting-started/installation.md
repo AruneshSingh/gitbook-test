@@ -5,7 +5,7 @@ icon: display
 
 # Installation
 
-**In a notebook**
+### In a notebook
 Install the superlinked library:
 
 ```python
@@ -13,7 +13,7 @@ Install the superlinked library:
 ```
 
 
-**As a script**
+### As a script
 Ensure your python version is at least `3.10.x` but not newer than `3.12.x`.
 
 ```bash
@@ -30,7 +30,7 @@ $> python -m pip install --upgrade pip
 $> python -m pip install superlinked
 ```
 
-**Run the example**
+### Run the example
 
 {% hint style="info" %}
 First run will take slightly longer as it has to download the embedding model.

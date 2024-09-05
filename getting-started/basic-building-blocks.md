@@ -20,6 +20,11 @@ In sum, Superlinked building blocks let you easily implement and deploy to fit y
 
 Let’s take a look at how these building blocks do this in a little more detail.
 
+**Follow along in this Colab.**
+{% embed url="https://colab.research.google.com/github/superlinked/superlinked/blob/main/notebook/feature/basic_building_blocks.ipynb" %}
+{% endembed %}
+
+
 ## Turning classes into Schemas
 
 Once you’ve parsed data into your notebook via JSON or a pandas dataframe, it’s time to create a Schema describing your data.
