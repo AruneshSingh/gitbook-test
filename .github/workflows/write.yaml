@@ -1,0 +1,46 @@
+name: Write References in SUMMARY.md
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Run Python Script
+      run: python scripts/set-reference.py
+
+    - name: Configure Git
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Check for changes
+      run: |
+        if git diff --exit-code; then
+          echo "No changes to commit."
+        else
+          echo "Changes detected."
+        fi
+
+    # Commit and push changes if there are any
+    - name: Commit and Push Changes
+      run: |
+        git add .
+        git commit -m "Automated changes from script"
+        git push origin main
+      if: success() && steps.check-for-changes.outputs.has_changes == 'true'
