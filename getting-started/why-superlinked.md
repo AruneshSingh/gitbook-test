@@ -6,7 +6,7 @@ icon: eyes
 # Why Superlinked?
 
 
-#### Your users now expect that your search can handle complex queries
+### Your users now expect that your search can handle complex queries
 
 ![Complex queries](../.gitbook/assets/why-superlinked-image.png)
 
@@ -16,7 +16,7 @@ Vector Search with text-only embeddings (& also multi-modal) fails on complex qu
 
 ![Example of queries needing other data than text](../.gitbook/assets/why-superlinked-image1.png)
 
-#### With text-only embeddings, you have to handle text separately from your other data and/or use *slow*, *low quality* & *high cost* workarounds
+### With text-only embeddings, you have to handle text separately from your other data and/or use *slow*, *low quality* & *high cost* workarounds
 
 <details>
     <summary>Metadata filters</summary>
