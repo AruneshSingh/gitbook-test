@@ -117,7 +117,11 @@ body_result.to_pandas()
 
 …produces the following result:
 
-![Query result 1](../.gitbook/assets/dynamic-parameters-result1.png)
+|  | body | like_count | id |
+|----|------|------------|-------|
+| 0 | Growing computation power enables advancements in AI. | 10 | paragraph-2 |
+| 1 | Glorious animals live in the wilderness. | 75 | paragraph-1 |
+
 
 
 While running the `like_query` …
@@ -129,7 +133,11 @@ like_result.to_pandas()
 
 ranks our results oppositely:
 
-![Query result 2](../.gitbook/assets/dynamic-parameters-result2.png)
+|  | body | like_count | id |
+|----|------|------------|-------|
+| 0 | Glorious animals live in the wilderness. | 75 | paragraph-1 |
+| 1 | Growing computation power enables advancements in AI. | 10 | paragraph-2 |
+
 
 
 By weighting when you define your query, you can set up searches that emphasize more relevant vector parts, without needing to re-embed your data.

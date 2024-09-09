@@ -105,6 +105,11 @@ result = app.query(
 ```
 Here, we query our index to search for the most similar `body_space`, and surface our results in the appropriate order:
 
+|  | body | like_count | id |
+|----|------|------------|-------|
+| 0 | Growing computation power enables advancements in AI. | 75 | paragraph-2 |
+| 1 | Glorious animals live in the wilderness. | 10 | paragraph-1 |
+
 ![Query result](../.gitbook/assets/multiple-embeddings-result.png)
 
 

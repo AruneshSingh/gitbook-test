@@ -114,7 +114,12 @@ result.to_pandas()
 
 Here's our result.
 
-![Query result](../.gitbook/assets/basicbb_query1.png)
+|  | body | id |
+|----|------|------------|
+| 0 | That is a very happy person | happy_person |
+| 1 | That is a happy dog | happy_dog |
+| 2 | Today is a sunny day | sunny_day |
+
 
 
 Changing the query text further demonstrates how our system produces results that are relevant to each query.
@@ -124,7 +129,12 @@ result = app.query(query, query_text="This is a happy dog")
 result.to_pandas()
 ```
 
-![Second query result](../.gitbook/assets/basicbb_query2.png)
+|  | body | id |
+|----|------|------------|
+| 0 | That is a happy dog | happy_dog |
+| 1 | That is a very happy person | happy_person |
+| 2 | Today is a sunny day | sunny_day |
+
 
 
 ## In sum
