@@ -110,7 +110,6 @@ Here, we query our index to search for the most similar `body_space`, and surfac
 | 0 | Growing computation power enables advancements in AI. | 75 | paragraph-2 |
 | 1 | Glorious animals live in the wilderness. | 10 | paragraph-1 |
 
-![Query result](../.gitbook/assets/multiple-embeddings-result.png)
 
 
 
