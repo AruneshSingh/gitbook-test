@@ -54,27 +54,33 @@ def save_tree(directory_tree, cur_path, indent=0):
     global new_references_to_write
     if cur_path in directory_tree:
         for file in directory_tree[cur_path]['files']:
-            if file == 'index.md':
-                spaces = ' ' * indent
-                dir_name = cur_path.split('/')[-1]
-                file_path = f'reference/{cur_path}/{file}'
-                line_to_print = f"* [{convert_text_to_title_case(dir_name)}]({file_path})"
-                new_references_to_write.append(f"{spaces}{line_to_print}\n")
-            else:
-                spaces = ' ' * (indent + 2)
-                file_path = f'reference/{cur_path}/{file}'
-                line_to_print = f"* [{get_file_header(file_path)}]({file_path})"
-                new_references_to_write.append(f"{spaces}{line_to_print}\n")
+            spaces = ' ' * indent
+            file_path = 'reference/' + cur_path + '/' + file
+            line_to_print = f"* [{get_file_header(file_path)}]({file_path})"
+            new_references_to_write.append(f"{spaces}{line_to_print}\n")
 
         for dir in directory_tree[cur_path]['dirs']:
-            new_path = f"{cur_path}/{dir}".strip('/')
+            spaces = ' ' * indent
+            dir_path = 'reference/' + cur_path + '/' + dir
+            dir_path = dir_path.replace('//', '/') # Happens for root of the directory
+            line_to_print = f"* [{convert_text_to_title_case(dir)}]({dir_path})"
+            new_references_to_write.append(f"{spaces}{line_to_print}\n")
+
+            new_path = cur_path + '/' + dir
+            new_path = new_path.strip('/')
             save_tree(directory_tree, new_path, indent + 2)
         
 directory_tree = build_tree('reference')
 
 new_references_to_write.append("* [Overview](reference/overview.md)\n")
-new_references_to_write.append("* [Changelog](reference/changelog.md)\n")
+new_references_to_write.append("* [Changelog](reference//changelog.md)\n")
 
-save_tree(directory_tree, '', 0)
+new_references_to_write.append("* [Common](reference/common)\n")
+save_tree(directory_tree, 'common', 2)
+
+new_references_to_write.append("* [DSL](reference/dsl)\n")
+save_tree(directory_tree, 'dsl', 2)
+
+new_references_to_write.append(f'\n')
 
 replace_content_between_headers('SUMMARY.md', '## Concepts', '## Use Cases', new_references_to_write)

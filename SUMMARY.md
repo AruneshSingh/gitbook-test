@@ -133,7 +133,7 @@
       * [Event Aggregation Effect Group](reference/dsl/index/util/event_aggregation_effect_group.md)
 
 
-## Use Cases
+## Tutorials
 * [Overview](use-cases/overview.md)
 * [Semantic Search - News](use-cases/semantic-search-news.md)
 * [Semantic Search - Movies](use-cases/semantic-search-movies.md)
