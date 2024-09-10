@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    # paths:
-    #   - 'reference/**'
+    paths:
+      - 'reference/**'
 
 jobs:
   run-python-script:
@@ -24,7 +24,7 @@ jobs:
         python-version: '3.x'
 
     - name: Run Python Script
-      run: python scripts/set-reference-old.py
+      run: python scripts/set-reference.py
 
     # - name: Configure Git
     #   run: |

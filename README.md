@@ -64,10 +64,6 @@ Superlinked is a compute framework for your information retrieval and feature en
 </tbody>
 </table>
 
-### Add this doc to Cursor
-
-![Add Superlinked to Cursor Docs](.gitbook/assets/docs_in_cursor.gif)
-
 
 ### Resources
 
@@ -94,6 +90,11 @@ Superlinked is a compute framework for your information retrieval and feature en
     
 </tbody>
 </table>
+
+
+### Add this doc to Cursor
+
+![Add Superlinked to Cursor Docs](.gitbook/assets/docs_in_cursor.gif)
 
 <!-- ### GitBook Product Demo
 {% embed url="https://www.youtube.com/playlist?list=PLZAlnWDc6FDsodH14aMS3eNRoTYMbua6U" %}

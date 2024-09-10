@@ -21,6 +21,13 @@
 
 
 ## Concepts
+* [Overview](concepts/overview.md)
+* [Features](concepts/features.md)
+* [Combining Multiple Embeddings for Better Retrieval Outcomes](concepts/multiple-embeddings.md)
+* [Dynamic Parameters/Query Time weights](concepts/dynamic-parameters.md)
+
+
+## Reference
 * [Overview](reference/overview.md)
 * [Changelog](reference//changelog.md)
 * [Common](reference/common)
@@ -124,6 +131,7 @@
       * [Aggregation Node Util](reference/dsl/index/util/aggregation_node_util.md)
       * [Effect With Referenced Schema Object](reference/dsl/index/util/effect_with_referenced_schema_object.md)
       * [Event Aggregation Effect Group](reference/dsl/index/util/event_aggregation_effect_group.md)
+
 
 ## Tutorials
 * [Overview](use-cases/overview.md)
