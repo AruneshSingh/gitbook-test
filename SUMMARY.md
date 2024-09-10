@@ -31,7 +31,7 @@
 * [Overview](reference/overview.md)
 * [Changelog](reference/changelog.md)
 * [Components](reference/components.md)
-  * [Dag](reference/common/dag)
+  * [DAG](reference/common/dag)
     * [Period Time](reference/common/dag/period_time.md)
   * [Parser](reference/common/parser)
     * [Dataframe Parser](reference/common/parser/dataframe_parser.md)
