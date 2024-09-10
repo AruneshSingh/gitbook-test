@@ -1,3 +1,8 @@
+---
+# description: >-
+icon: brackets-curly
+---
+
 # Using the API to ingest and query the application
 
 Once you have your application up and running, you can start loading data and querying the API. Here's a step-by-step guide on how to do it:

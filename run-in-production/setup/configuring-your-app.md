@@ -1,3 +1,8 @@
+---
+# description: >-
+icon: square-sliders
+---
+
 # Server Configuration Guidelines
 
 The application's main logic resides in the Superlinked configuration files. These are where you define your application's structure and behavior using the Superlinked library.

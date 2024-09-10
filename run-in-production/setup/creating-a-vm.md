@@ -1,4 +1,9 @@
-## What are Virtual Machines?
+---
+# description: >-
+icon: computer-classic
+---
+
+# What are Virtual Machines?
 
 Virtual Machines (VMs) are emulations of computer systems. They can run applications and services on a virtual platform, as if they were on a physical machine, while sharing the underlying hardware resources.
 

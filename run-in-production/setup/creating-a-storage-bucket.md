@@ -1,4 +1,9 @@
-## What are Storage Buckets?
+---
+# description: >-
+icon: bucket
+---
+
+# What are Storage Buckets?
 
 Storage buckets are fundamental entities used to store data in cloud storage services. They are essentially containers for data where you can upload, download, and manage files. Two of the most popular cloud storage services are Amazon S3 (Simple Storage Service) and Google Cloud Storage (GCS).
 

@@ -1,3 +1,8 @@
+---
+# description: >-
+icon: database
+---
+
 # Vector databases
 
 This document will list and point to the detailed documentation of the supported vector databases:

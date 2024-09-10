@@ -1,3 +1,8 @@
+---
+# description: >-
+icon: display
+---
+
 # Superlinked Server
 
 This repository contains a server implementation of the [Superlinked](https://github.com/superlinked/superlinked) library. It is designed to be used by end users who want to leverage the power of Superlinked in deployable projects. With a single script, you can deploy a Superlinked-powered app instance that creates REST endpoints and connects to external Vector Databases. This makes it an ideal solution for those seeking an easy-to-deploy environment for their Superlinked projects.
