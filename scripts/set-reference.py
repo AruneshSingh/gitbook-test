@@ -83,4 +83,4 @@ save_tree(directory_tree, 'dsl', 2)
 
 new_references_to_write.append(f'\n')
 
-replace_content_between_headers('SUMMARY.md', '## Reference', '## Help & FAQ', new_references_to_write)
+replace_content_between_headers('SUMMARY.md', '## Concepts', '## Use Cases', new_references_to_write)

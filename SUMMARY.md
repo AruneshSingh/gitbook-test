@@ -1,31 +1,30 @@
 # Table of contents
 * [Welcome](README.md)
 
+
 ## Getting Started
 * [Why Superlinked?](getting-started/why-superlinked.md)
-* [Installation](getting-started/installation.md)
+* [Setup Superlinked](getting-started/installation.md)
 * [Basic Building Blocks](getting-started/basic-building-blocks.md)
+
+
+## Run in Production
+* [Overview](run-in-production/overview.md)
+* [Setup Superlinked Server](run-in-production/setup/index.md)
+  * [Creating a VM](run-in-production/setup/creating-a-vm.md)
+  * [Creating a Storage Bucket](run-in-production/setup/creating-a-storage-bucket.md)
+  * [Configuring your app](run-in-production/setup/configuring-your-app.md)
+  * [Interacting with app via API](run-in-production/setup/interacting-with-app-via-api.md)
+* [Supported Vector Databases](run-in-production/vdbs/index.md)
+  * [Redis](run-in-production/vdbs/redis.md)
+  * [Mongo DB](run-in-production/vdbs/mongodb.md)
+
 
 ## Concepts
 * [Overview](concepts/overview.md)
 * [Features](concepts/features.md)
 * [Combining Multiple Embeddings for Better Retrieval Outcomes](concepts/multiple-embeddings.md)
 * [Dynamic Parameters/Query Time weights](concepts/dynamic-parameters.md)
-
-
-
-## Use Cases
-* [Overview](use-cases/overview.md)
-* [Semantic Search - News](use-cases/semantic-search-news.md)
-* [Semantic Search - Movies](use-cases/semantic-search-movies.md)
-* [RecSys - Ecommerce](use-cases/recsys-ecomm.md)
-* [RAG - HR](use-cases/rag-hr.md)
-* [Analytics - User Acquisition](use-cases/analytics-user-acquisition.md)
-* [Analytics - Keyword Expansion](use-cases/analytics-keyword-expansion.md)
-
-
-## Run in Production
-* [Overview](run-in-production/overview.md)
 
 
 ## Reference
@@ -133,9 +132,21 @@
       * [Effect With Referenced Schema Object](reference/dsl/index/util/effect_with_referenced_schema_object.md)
       * [Event Aggregation Effect Group](reference/dsl/index/util/event_aggregation_effect_group.md)
 
+
+## Use Cases
+* [Overview](use-cases/overview.md)
+* [Semantic Search - News](use-cases/semantic-search-news.md)
+* [Semantic Search - Movies](use-cases/semantic-search-movies.md)
+* [RecSys - Ecommerce](use-cases/recsys-ecomm.md)
+* [RAG - HR](use-cases/rag-hr.md)
+* [Analytics - User Acquisition](use-cases/analytics-user-acquisition.md)
+* [Analytics - Keyword Expansion](use-cases/analytics-keyword-expansion.md)
+
+
 ## Help & FAQ
 * [Support](help-and-faq/contributing.md)
 * [Discussion](https://github.com/superlinked/superlinked/discussions)
+
 
 ## Policies
 * [Terms of Use](https://superlinked.com/policies/terms-and-conditions)
