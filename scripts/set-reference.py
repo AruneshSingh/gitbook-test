@@ -77,4 +77,4 @@ new_references_to_write.append("* [Changelog](reference/changelog.md)\n")
 
 save_tree(directory_tree, '', 0)
 
-replace_content_between_headers('SUMMARY.md', '## Concepts', '## Use Cases', new_references_to_write)
+replace_content_between_headers('SUMMARY.md', '## Concepts', '## Tutorials', new_references_to_write)
