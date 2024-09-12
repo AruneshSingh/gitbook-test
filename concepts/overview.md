@@ -5,6 +5,7 @@ icon: bullseye-arrow
 
 # Overview
 
+
 1. Describe your data using Python classes with the [@schema](../reference/common/schema/schema.md) decorator.
 2. Describe your vector embeddings from building blocks with [Spaces](../reference/dsl/space/index.md).
 3. Combine your embeddings into a queryable [Index](../reference/dsl/index/index.md).
@@ -14,6 +15,7 @@ icon: bullseye-arrow
 7. Run your configuration with an [Executor](../reference/dsl/executor/in_memory/in_memory_executor.md).
 
 
+## Colab notebooks explaining the concepts
 
 <table data-view="cards">
 <thead>

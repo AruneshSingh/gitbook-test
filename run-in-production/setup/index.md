@@ -11,11 +11,11 @@ icon: display
 
 Before you can use this environment, you need to ensure that you have the following prerequisites:
 
-- A local setup or a server on AWS or GCP. Please note that Windows is not supported, you should use Linux or MacOS. You can learn how to create a server on AWS from [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html) and on GCP from [here](https://cloud.google.com/compute/docs/quickstart-linux). Or take a look at our simplified [docs](docs/vm.md).
+- A local setup or a server on AWS or GCP. Please note that Windows is not supported, you should use Linux or MacOS. You can learn how to create a server on AWS from [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html) and on GCP from [here](https://cloud.google.com/compute/docs/quickstart-linux). *Or take a look at our simplified [docs](creating-a-vm.md)*.
 - Python 3.11 or higher. You can download it from [here](https://www.python.org/downloads/).
 - Docker with the Compose plugin. You can download Docker from [here](https://www.docker.com/products/docker-desktop) and learn how to use the Compose plugin from [here](https://docs.docker.com/compose/).
 - `Poetry` and `pyenv` installed on the machine. Installation steps for `Poetry` can be found [here](https://python-poetry.org/docs/#installation). For `pyenv` installation, please follow [these instructions](https://github.com/pyenv/pyenv?tab=readme-ov-file#installation).
-- An S3 bucket if you are using AWS or a GCS bucket if you are using GCP. This bucket is needed to store the configuration files, which contains your application's code. This setup allows you to make changes to your application without needing to SSH into the server and edit the files in the directory with each change. You can learn how to create an S3 bucket from [here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html) and a GCS bucket from [here](https://cloud.google.com/storage/docs/creating-buckets). Or take a look at our simplified [docs](docs/bucket.md).
+- An S3 bucket if you are using AWS or a GCS bucket if you are using GCP. This bucket is needed to store the configuration files, which contains your application's code. This setup allows you to make changes to your application without needing to SSH into the server and edit the files in the directory with each change. You can learn how to create an S3 bucket from [here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html) and a GCS bucket from [here](https://cloud.google.com/storage/docs/creating-buckets). *Or take a look at our simplified [docs](creating-a-storage-bucket.md)*.
 
 ## How to start the application
 

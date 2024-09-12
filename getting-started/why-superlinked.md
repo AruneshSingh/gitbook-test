@@ -29,7 +29,7 @@ Consider these examples:
 This is where Superlinked comes in, offering a powerful, flexible framework designed to handle the complexities of modern search and information retrieval challenges. Superlinked is a vector embedding solution for AI teams working with complicated data within their [RAG](../use-cases/rag-hr.md), [Search](../use-cases/semantic-search-news.md), [Recommendations](../use-cases/recsys-ecomm.md) and [Analytics](../use-cases/analytics-keyword-expansion.md) stack.
 
 
-Let's quickly go through an example. Keep in mind that there are a ton of new concepts thrown at you, but this is just to illustrate how Superlinked 'looks'. We'll go over each concept in detail in the following sections.
+Let's quickly go through an example. Keep in mind that there are a ton of new concepts thrown at you, but this is just to illustrate how Superlinked 'looks'. We'll go over each concept in detail in the [following sections](basic-building-blocks.md).
 
 Imagine you are building a system that can deal with a query like `“recent news about crop yield”`. After collecting your data, you define your schema, ingest data and build index like this:
 
