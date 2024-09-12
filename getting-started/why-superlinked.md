@@ -130,7 +130,7 @@ curl -X POST \
 
 ```
 
-Handle natural language queries
+**Handle natural language queries**
 
 ```python
 #In a notebook like this:
@@ -155,12 +155,8 @@ curl -X POST \
 
 ```
 
+Discover the powerful capabilities Superlinked offers [here](../concepts/overview.md).
 
-Nice features are:
--   embedding of everything (text, numbers, categories, etc.) in vectors
--   query weights on the fly
--   hard-filters if you need them
--   querying with vector
 
 
 

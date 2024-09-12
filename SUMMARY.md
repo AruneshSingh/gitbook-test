@@ -18,7 +18,7 @@
 
 ## Concepts
 * [Overview](concepts/overview.md)
-* [Features](concepts/features.md)
+<!-- * [Features](concepts/features.md) -->
 * [Combining Multiple Embeddings for Better Retrieval Outcomes](concepts/multiple-embeddings.md)
 * [Dynamic Parameters/Query Time weights](concepts/dynamic-parameters.md)
 
