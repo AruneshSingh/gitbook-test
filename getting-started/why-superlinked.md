@@ -5,33 +5,214 @@ icon: eyes
 
 # Why Superlinked?
 
+### Your queries are changing
 
-### Your users now expect that your search can handle complex queries
+Your users now expect that your search can handle complex queries.
 
-![Complex queries](../.gitbook/assets/why-superlinked-image.png)
+> **We saw 2x more keywords search 6 months after the ChatGPT launch.**
+> *Algolia CTO, 2023 | 120B searches/month ! 17,000 customers*
 
-{% hint style="info" %}
 Vector Search with text-only embeddings (& also multi-modal) fails on complex queries, because complex queries are never just about text. They involve other data too!
-{% endhint %}
 
 ![Example of queries needing other data than text](../.gitbook/assets/why-superlinked-image1.png)
 
-### With text-only embeddings, you have to handle text separately from your other data and/or use *slow*, *low quality* & *high cost* workarounds
+### Enter Superlinked
 
-<details>
-    <summary>Metadata filters</summary>
-    When you convert a fuzzy preference like “recent”, “risky” or “popular” into a filter, you model a sigmoid with a binary step function = not enough resolution.
-</details>
+Superlinked is a vector embedding solution for AI teams working with complicated data.
 
-<details>
-    <summary>Candidate re-ranking</summary>
-    Semantic ranking & ColBERT only use text, learn2rank models need ML Engineers.
-    Broad queries eg “popular pants” can’t be handled by re-ranking at all, due to poor candidate recall.
-</details>
 
-<details>
-<summary>Stringify & vectorize</summary>
-It’s extremely noisy to stringify & text-embed whole objects like users, SKUs or content+metadata. See below for `cosine(textembed(str(50)),textembed(str(1..100))):`
-</details>
+It provides nice interface to run multi-modal semantic search used in RecSys, RAG, and many different places.
 
-![Comparing current methods of combining text-only embeddings to other data](../.gitbook/assets/why-superlinked-image2.png)
+Let's quickly go through an example. Keep in mind that there are a ton of new concepts thrown at you, but this is just to illustrate how Superlinked 'looks'. We'll go over each concept in detail in the following sections.
+
+Imagine you are building a system that can deal with a query like `“recent news about crop yield”`. After collecting your data, you define your schema, ingest data and build index like this:
+
+**Schema definition**
+```python
+
+@schema
+class News:
+    created_at: Timestamp
+    like_count: Integer
+    moderation_score: Float
+    content: String
+
+@schema
+class User:
+    interest: String
+
+@event_scehma
+class Event:
+    news: SchemaReference[News]
+    user: SchemaReference[User]
+    event_type: String
+
+```
+
+**Encoder definition**
+```python
+
+recency_space = RecencySpace(timestamp = news.created_at)
+popularity_space = NumberSpace(number = news.like_count, mode=Mode.MAXIMUM)
+trust_space = NumberSpace(number = news.moderation_score, mode=Mode.MAXIMUM)
+semantic_space = TextSimilarity(
+    text = [news.content, user.interest],
+    model = "sentence-transformers/all-mpnet-base-v2"
+)
+```
+
+**Define Indexes**
+```python
+index = Index(
+    spaces = [recency_space, popularity_space, trust_space, semantic_space],
+    effects = [
+        Effect(
+            semantic_space, event.user, 0.8*event.news
+        )
+    ]
+)
+
+```
+
+You define your queries and parameterize them like this:
+
+**Query definition**
+```python
+
+query = (
+    Query(
+        index,
+        weights = {
+            recency_space: Param('recency_weight'),
+            popularity_space: Param('popularity_weight'),
+            trust_space: Param('trust_weight'),
+            semantic_space: Param('semantic_weight')
+    })
+    .find(news)
+    .similar(
+        semantic_space.text,
+        Param("content_query")
+    )
+    .with_vector(user, Param("user_id"))
+)
+
+```
+
+**Debug in notebook, run as server**
+
+```python
+
+OnlineExecutor(
+    sources = [RestSource(news), RestSource(user)],
+    index = [index],
+    query = [query],
+    # vector_database = MongoDBVectorDatabase(...),  
+    # vector_database = RedisVectorDatabase(...),
+)
+
+# SparkExecutor()   <-- Coming soon in Superlinked Cloud
+
+```
+
+```bash
+
+curl -X POST \
+    'http://localhost:8000/api/v1/search/query' \
+    --header 'Accept: */*' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "content_query": "crop yields",
+        "semantic_weight": 0.5,
+        "recency_weight": 0.9,
+        "popularity_weight": 0.5,
+        "trust_weight": 0.2,
+    }'
+
+```
+
+Handle natural language queries
+
+```python
+#In a notebook like this:
+
+query = (
+    Query(...)
+    .with_natural_query(Param("recent news about crop yield"))
+)
+
+```
+
+```bash
+# As an API call like this:
+
+curl -X POST \
+    'http://localhost:8000/api/v1/search/query' \
+    --header 'Accept: */*' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "natural_language_query": "recent news about crop yield"
+    }'
+
+```
+
+
+Nice features are:
+-   embedding of everything (text, numbers, categories, etc.) in vectors
+-   query weights on the fly
+-   hard-filters if you need them
+-   querying with vector
+
+
+
+
+
+### But can't I put all my data in json, stringify it and embed using LLM?
+
+Stringify and embed approach produces unpredictable results. For example:
+- Embed 0..100 with OpenAI API
+- Calculate and plot the cosine similarity
+- Observe the difference between expected and actual results
+
+![](../.gitbook/assets/why-superlinked-stringify.png)
+
+
+### Okay, But can't I  ...
+
+1. Use different already existing storages per attribute, fire multiple searches and then reconcile results?
+
+{% hint style="info" %}
+Our naive approach (above) - storing and searching attribute vectors separately, then combining results - is limited in ability, subtlety, and efficiency when we need to retrieve objects with multiple simultaneous attributes. Moreover, multiple kNN searches take [more time than a single search with concatenated vectors](https://redis.io/blog/benchmarking-results-for-vector-databases/).
+
+It's better to store all your attribute vectors in the same vector store and perform a single search, weighting your attributes at query time.
+
+Read more here: [Multi-attribute search with vector embeddings](https://superlinked.com/vectorhub/articles/multi-attribute-semantic-search)
+
+{% endhint %}
+
+2. Use Metadata filters or Candidate re-ranking
+
+{% hint style="info" %}
+When you convert a fuzzy preference like “recent”, “risky” or “popular” into a filter, you model a sigmoid with a binary step function = not enough resolution.
+
+
+Semantic ranking & ColBERT only use text, learn2rank models need ML Engineers.
+Broad queries eg “popular pants” can’t be handled by re-ranking at all, due to poor candidate recall.
+
+![](../.gitbook/assets/why-superlinked-filterreranking.png)
+
+
+{% endhint %}
+
+
+
+### Okay, seems like Superlinked proposes a nice approach, but
+
+1. How can I build with it at scale?
+   - [how to deploy and talk to it](../run-in-production/overview.md)
+   - how to connect my VDB
+<!-- 2. Why should I trust this approach? are scores reliable?
+   - how vectors are created
+   - how weights are applied
+   - how scores are calculated -->
+
+<!-- ### What bells and whistles are available for me? -->
