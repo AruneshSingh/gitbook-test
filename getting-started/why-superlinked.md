@@ -7,21 +7,27 @@ icon: eyes
 
 ### Your queries are changing
 
-Your users now expect that your search can handle complex queries.
+The landscape of search and information retrieval is rapidly evolving. With the rise of AI and large language models, user expectations for search capabilities have skyrocketed. Your users now expect that your search can handle complex, nuanced queries that go beyond simple keyword matching.
 
 > **We saw 2x more keywords search 6 months after the ChatGPT launch.**
 > *Algolia CTO, 2023 | 120B searches/month ! 17,000 customers*
 
+This trend isn't isolated. Across industries, we're seeing a shift towards more sophisticated search queries that blend multiple concepts, contexts, and data types.
+
 Vector Search with text-only embeddings (& also multi-modal) fails on complex queries, because complex queries are never just about text. They involve other data too!
+
+Consider these examples:
+1. **E-commerce**: A query like "comfortable running shoes for marathon training under $150" involves text, numerical data (price), and categorical information (product type, use case).
+2. **Content platforms**: "Popular science fiction movies from the 80s with strong female leads" combines text analysis, temporal data, and popularity metrics.
+3. **Job search**: "Entry-level data science positions in tech startups with good work-life balance" requires understanding of text, categorical data (industry, job level), and even subjective metrics.
+
 
 ![Example of queries needing other data than text](../.gitbook/assets/why-superlinked-image1.png)
 
 ### Enter Superlinked
 
-Superlinked is a vector embedding solution for AI teams working with complicated data.
+This is where Superlinked comes in, offering a powerful, flexible framework designed to handle the complexities of modern search and information retrieval challenges. Superlinked is a vector embedding solution for AI teams working with complicated data within their [RAG](../use-cases/rag-hr.md), [Search](../use-cases/semantic-search-news.md), [Recommendations](../use-cases/recsys-ecomm.md) and [Analytics](../use-cases/analytics-keyword-expansion.md) stack.
 
-
-It provides nice interface to run multi-modal semantic search used in RecSys, RAG, and many different places.
 
 Let's quickly go through an example. Keep in mind that there are a ton of new concepts thrown at you, but this is just to illustrate how Superlinked 'looks'. We'll go over each concept in detail in the following sections.
 

@@ -8,17 +8,16 @@ icon: shapes
 
 ## Intro
 
-We’ve built out the Superlinked framework using @schema, Source, Spaces, Index, Query, and Executor - our building blocks. These building blocks let you build your system as a set of modules, customized and repurposable to the requirements of your use case/s.
+Superlinked's framework is built on key components: [@schema](../reference/common/schema/schema.md), [Source](../reference/dsl/source/index.md), [Spaces](../reference/dsl/space/index.md), [Index](../reference/dsl/index/index.md), [Query](../reference/dsl/query/index.md), and [Executor](../reference/dsl/executor/index.md). These building blocks allow you to create a modular system tailored to your specific use cases.
 
-You start from your desired use case endpoints - i.e., how you want your embeddings to represent your data - what attributes to represent, how to weight them, and so on. Your endpoints guide how you set up your system. You **custom tailor your modules *before* you run your query**. You might run the query with weights adjusted to, for example, a unique user’s interests or, alternatively, to the most recent item.
+You begin by defining your desired endpoints - how you want your embeddings to represent your data. This guides your system setup, allowing you to **customize your modules before running queries**. You can adjust query weights for different scenarios, such as a user's interests or recent items.
 
-In this way, Superlinked’s modularity **separates query description from query execution**, enabling you to run the same query in different environments without re-implementing a new solution each time. To build your Query, you use descriptive elements like @schema, Source, Spaces, Index, or Event. The **same descriptive components** can be re-used - **run using different Executors interchangeably**.
+This modular approach **separates query description from execution**, enabling you to run the same query across different environments without reimplementation. You build your Query using descriptive elements like @schema, Source, Spaces, Index, or Event, which can be **reused with different Executors**.
 
-By focusing on connectors (to data sources and databases) rather than starting over from scratch, Superlinked’s framework lets you transition easily across deployments (e.g., from in-memory to batch or real-time data pipelines). For example, you can have one Executor that runs in a notebook, another that provisions a rest API, and a different one that batch calculates with spark.
+Superlinked's focus on connectors facilitates easy transitions between deployments, from in-memory to batch or real-time data pipelines. This flexibility allows for rapid experimentation in embedding and retrieval while maximizing control over index creation.
 
-In sum, Superlinked building blocks let you easily implement and deploy to fit your environment, maximizing your control over index creation and permitting rapid experimentation during embedding and retrieval.
+Let's explore these building blocks in more detail.
 
-Let’s take a look at how these building blocks do this in a little more detail.
 
 **Follow along in this Colab.**
 {% embed url="https://colab.research.google.com/github/superlinked/superlinked/blob/main/notebook/feature/basic_building_blocks.ipynb" %}
@@ -38,16 +37,18 @@ class ParagraphSchema:
     id: IdField
 ```
 
-With your Schemas created, you are ready to move on to embedding and querying, which is where Superlinked’s building blocks approach really empowers you. The Superlinked framework is based on the intuition that people doing semantic search can better satisfy the requirements of their use case/s if they can customize how their system handles data and queries. **Spaces** is a declarative class developed with this in mind. The Space module encapsulates the vector creation logic that will be used at ingestion time, and again at query time.
+With your Schemas created, you are ready to move on to embedding and querying, which is where Superlinked’s building blocks approach really empowers you. The Superlinked framework is based on the intuition that people doing semantic search can better satisfy the requirements of their use case/s if they can customize how their system handles data and queries. 
 
 ## Declaring how to embed your data using Spaces
+**Spaces** is a declarative class developed with this in mind. The Space module encapsulates the vector creation logic that will be used at ingestion time, and again at query time.
 
-Spaces lets you tailor how you embed different attributes of your data. Spaces can be categorized along 2 key dimensions:
+Spaces lets you tailor how you embed different attributes of your data and can be categorized along 2 key dimensions:
 1. what input types the Space permits - e.g., text, timestamp, numeric, categorical
 2. whether the Space represents similarity (e.g, TextSimilaritySpace) or scale (e.g., numeric space)
-Which Space/s fit your use case depends on both these dimensions - your input type and what you need to represent about your data.
 
-You use different Spaces for different data types. For example, TextSimilaritySpace and CategoricalSimilaritySpace can take String as an input, RecencySpace can take Timestamp, NumberSpace can take Int/Float, and so on. Each Space captures a different, relevant piece of information (e.g., title, review count, etc.) about an entity. This lets you weight each Space according to which attributes are relevant to your use case - before you concatenate all your Spaces into a single multimodal vector among others in the queryable vector space.
+Which Space/s fit your use case depends on both these dimensions - your input type and what you need to represent about your data. You can find a list of spaces in Superlinked [here](../reference/dsl/space/index.md).
+
+You use different Spaces for different data types. For example, [TextSimilaritySpace](../reference/dsl/space/text_similarity_space.md) and [CategoricalSimilaritySpace](../reference/dsl/space/categorical_similarity_space.md) can take String as an input, [RecencySpace](../reference/dsl/space/recency_space.md) can take Timestamp, [NumberSpace](../reference/dsl/space/number_space.md) can take Int/Float, and so on. Each Space captures a different, relevant piece of information (e.g., title, review count, etc.) about an entity. This lets you weight each Space according to which attributes are relevant to your use case - before you concatenate all your Spaces into a single multimodal vector among others in the queryable vector space.
 
 By prioritizing the creation of smarter vectors up front - and only then creating the index - we can achieve better quality retrieval, without costly and time-consuming reranking and general post-processing work.
 
