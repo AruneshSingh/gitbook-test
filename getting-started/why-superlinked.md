@@ -180,20 +180,20 @@ Stringify and embed approach produces unpredictable results. For example:
 
 ### Okay, But can't I  ...
 
-1. Use different already existing storages per attribute, fire multiple searches and then reconcile results?
+1. *Use different already existing storages per attribute, fire multiple searches and then reconcile results?*
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
 Our naive approach (above) - storing and searching attribute vectors separately, then combining results - is limited in ability, subtlety, and efficiency when we need to retrieve objects with multiple simultaneous attributes. Moreover, multiple kNN searches take [more time than a single search with concatenated vectors](https://redis.io/blog/benchmarking-results-for-vector-databases/).
 
 It's better to store all your attribute vectors in the same vector store and perform a single search, weighting your attributes at query time.
 
 Read more here: [Multi-attribute search with vector embeddings](https://superlinked.com/vectorhub/articles/multi-attribute-semantic-search)
 
-{% endhint %}
+<!-- {% endhint %} -->
 
-2. Use Metadata filters or Candidate re-ranking
+2. *Use Metadata filters or Candidate re-ranking*
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
 When you convert a fuzzy preference like “recent”, “risky” or “popular” into a filter, you model a sigmoid with a binary step function = not enough resolution.
 
 
@@ -203,7 +203,7 @@ Broad queries eg “popular pants” can’t be handled by re-ranking at all, du
 ![](../.gitbook/assets/why-superlinked-filterreranking.png)
 
 
-{% endhint %}
+<!-- {% endhint %} -->
 
 
 
