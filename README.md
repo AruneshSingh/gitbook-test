@@ -29,14 +29,14 @@ Superlinked is a compute framework for your information retrieval and feature en
         <td><strong>Concepts</strong></td>
         <td>Explore the core ideas and principles behind Superlinked's functionality.</td>
         <td></td>
-        <td><a href=".gitbook/assets/getting-started-thumbnails/concepts.png">concepts.png</a></td>
+        <td><a href=".gitbook/assets/getting-started-thumbnails/concept.png">concepts.png</a></td>
         <td><a href="concepts/overview.md">link</a></td>
     </tr>
     <tr>
         <td><strong>Use Cases</strong></td>
         <td>Learn how Superlinked can be applied to solve real-world problems.</td>
         <td></td>
-        <td><a href=".gitbook/assets/getting-started-thumbnails/use-cases.png">use-cases.png</a></td>
+        <td><a href=".gitbook/assets/getting-started-thumbnails/use cases.png">use-cases.png</a></td>
         <td><a href="use-cases/overview.md">link</a></td>
     </tr>
     <tr>
@@ -70,14 +70,14 @@ Superlinked is a compute framework for your information retrieval and feature en
         <td><strong>VectorHub</strong></td>
         <td>free and open-sourced learning hub for people interested in adding vector retrieval to their ML stack.</td>
         <td></td>
-        <td><a href=".gitbook/assets/content-editor.png">content-editor.png</a></td>
+        <td><a href=".gitbook/assets/resources-thumbnails/vectorhub.png">vectorhub.png</a></td>
         <td><a href="https://superlinked.com/vectorhub" target="_blank">link</a></td>
     </tr>
     <tr>
         <td><strong>Vector DB Comparison</strong></td>
         <td>Open-source collaborative comparison of vector databases by Superlinked</td>
         <td></td>
-        <td><a href=".gitbook/assets/content-editor.png">content-editor.png</a></td>
+        <td><a href=".gitbook/assets/resources-thumbnails/vdb table.png">vector-db-comparison.png</a></td>
         <td><a href="https://superlinked.com/vector-db-comparison" target="_blank">link</a></td>
     </tr>
     
