@@ -125,7 +125,7 @@ icon: bullseye-arrow
         <td><strong>Vector Sampler</strong></td>
         <td>Generate diverse vector samples to explore and understand the embedding space.</td>
         <td></td>
-        <td><a href="../.gitbook/assets/concept-thumbnails/Vector Sampler.png">Vector Sampler.png</a></td>
+        <td><a href="../.gitbook/assets/concept-thumbnails/Vector Sampling.png">Vector Sampling.png</a></td>
         <td><a href="https://github.com/superlinked/superlinked/blob/main/notebook/feature/vector_sampler.ipynb" target="_blank">vector_sampler</a></td>
     </tr>
 

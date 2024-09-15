@@ -22,42 +22,35 @@ Superlinked is a compute framework for your information retrieval and feature en
         <td><strong>Getting Started</strong></td>
         <td>Begin your journey with Superlinked by setting up and understanding the basics.</td>
         <td></td>
-        <td><a href=".gitbook/assets/content-editor.png">content-editor.png</a></td>
+        <td><a href=".gitbook/assets/getting-started-thumnails/getting started.png">getting started.png</a></td>
         <td><a href="getting-started/installation.md">link</a></td>
     </tr>
     <tr>
         <td><strong>Concepts</strong></td>
         <td>Explore the core ideas and principles behind Superlinked's functionality.</td>
         <td></td>
-        <td><a href=".gitbook/assets/content-editor.png">content-editor.png</a></td>
+        <td><a href=".gitbook/assets/getting-started-thumnails/concepts.png">concepts.png</a></td>
         <td><a href="concepts/overview.md">link</a></td>
-    </tr>
-    <tr>
-        <td><strong>Features</strong></td>
-        <td>Discover the powerful capabilities Superlinked offers.</td>
-        <td></td>
-        <td><a href=".gitbook/assets/content-editor.png">content-editor.png</a></td>
-        <td><a href="https://github.com/superlinked/superlinked/tree/main/notebook/feature" target="_blank">link</a></td>
     </tr>
     <tr>
         <td><strong>Use Cases</strong></td>
         <td>Learn how Superlinked can be applied to solve real-world problems.</td>
         <td></td>
-        <td><a href=".gitbook/assets/content-editor.png">content-editor.png</a></td>
+        <td><a href=".gitbook/assets/getting-started-thumnails/use cases.png">use-cases.png</a></td>
         <td><a href="use-cases/overview.md">link</a></td>
     </tr>
     <tr>
         <td><strong>Reference</strong></td>
         <td>Access detailed documentation for Superlinked's components.</td>
         <td></td>
-        <td><a href=".gitbook/assets/content-editor.png">content-editor.png</a></td>
+        <td><a href=".gitbook/assets/getting-started-thumnails/reference.png">reference.png</a></td>
         <td><a href="reference/overview.md">link</a></td>
     </tr>
     <tr>
         <td><strong>Changelog</strong></td>
         <td>View the changelog for Superlinked.</td>
         <td></td>
-        <td><a href=".gitbook/assets/content-editor.png">content-editor.png</a></td>
+        <td><a href=".gitbook/assets/getting-started-thumnails/changelog.png">changelog.png</a></td>
         <td><a href="reference/changelog.md">link</a></td>
     </tr>
     
