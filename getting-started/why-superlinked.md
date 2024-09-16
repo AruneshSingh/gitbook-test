@@ -1,6 +1,8 @@
 ---
 # description: >-
 icon: eyes
+cover: ../.gitbook/assets/why-superlinked-cover.png
+coverY: 0
 ---
 
 # Why Superlinked?
