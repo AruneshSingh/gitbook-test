@@ -9,7 +9,7 @@ icon: bullseye-arrow
 
 To get started, check out the [Superlinked Server Setup](setup/index.md).
 
-If your are interested in learning more about running at scale, [Book a demo](https://links.superlinked.com/sl-repo-readme-form) for an early access to our managed cloud.
+If your are interested in learning more about running at scale, [Book a demo](https://links.superlinked.com/sl-docs-readme-form) for an early access to our managed cloud.
 
 ### Supported VDBs
 

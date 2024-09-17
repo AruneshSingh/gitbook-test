@@ -212,11 +212,18 @@ Broad queries eg “popular pants” can’t be handled by re-ranking at all, du
 ### Okay, seems like Superlinked proposes a nice approach, but
 
 1. How can I build with it at scale?
-   - [how to deploy and talk to it](../run-in-production/overview.md)
-   - how to connect my VDB
+    
+    [Superlinked Server](../run-in-production/overview.md) offers a streamlined deployment solution for Superlinked projects. With a single script, you can create a Superlinked application featuring REST endpoints and Vector Database integration. This enables quick implementation of advanced search capabilities, allowing you to focus on leveraging Superlinked's features rather than managing infrastructure, from prototype to production.
+
 <!-- 2. Why should I trust this approach? are scores reliable?
    - how vectors are created
    - how weights are applied
    - how scores are calculated -->
 
 <!-- ### What bells and whistles are available for me? -->
+
+
+
+### How does it fit in the big picture?
+
+![Superlinked framework diagram](../.gitbook/assets/sl_diagram.png)

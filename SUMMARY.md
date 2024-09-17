@@ -119,9 +119,12 @@
 * [RAG - HR](use-cases/rag-hr.md)
 * [Analytics - User Acquisition](use-cases/analytics-user-acquisition.md)
 * [Analytics - Keyword Expansion](use-cases/analytics-keyword-expansion.md)
+
 ## Help & FAQ
+* [Logging](help-and-faq/logging.md)
 * [Support](help-and-faq/contributing.md)
 * [Discussion](https://github.com/superlinked/superlinked/discussions)
+
 ## Policies
 * [Terms of Use](https://superlinked.com/policies/terms-and-conditions)
 * [Privacy Policy](https://superlinked.com/policies/privacy-policy)
