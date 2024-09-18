@@ -86,11 +86,11 @@ directory_tree = build_tree('reference')
 new_references_to_write.append("* [Overview](reference/overview.md)\n")
 new_references_to_write.append("* [Changelog](reference/changelog.md)\n")
 
-# new_references_to_write.append("* [Common](reference/common)\n")
-save_tree(directory_tree, 'common', 0)
+new_references_to_write.append("* [Components](reference/components.md)\n")
+save_tree(directory_tree, 'common', 2)
 
 # new_references_to_write.append("* [DSL](reference/dsl)\n")
-save_tree(directory_tree, 'dsl', 0)
+save_tree(directory_tree, 'dsl', 2)
 
 new_references_to_write.append(f'\n')
 
