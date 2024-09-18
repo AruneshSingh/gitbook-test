@@ -54,7 +54,7 @@ Successful response (200 OK):
 }
 ```
 
-> The keys are the available data loader names that you can use for the rest of the data loader endpoints below. To see how these names are constructed and can be altered, read the [docs here](app.md#incorporate-data-source).
+> The keys are the available data loader names that you can use for the rest of the data loader endpoints below. To see how these names are constructed and can be altered, read the [docs here](configuring-your-app.md#incorporate-data-source).
 
 ### Trigger the data load
 

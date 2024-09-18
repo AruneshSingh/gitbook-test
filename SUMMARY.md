@@ -122,7 +122,7 @@
 
 ## Help & FAQ
 * [Logging](help-and-faq/logging.md)
-* [Support](help-and-faq/contributing.md)
+* [Support](help-and-faq/support.md)
 * [Discussion](https://github.com/superlinked/superlinked/discussions)
 
 ## Policies

@@ -14,15 +14,3 @@ Superlinked's framework is broadly divided into 2 modules:
 Please refer to the [concepts](../concepts/overview.md) section for a high-level overview of the framework.
 
 You can check all references in the components section.
-
-
-Sub-modules
------------
-* superlinked.framework.dsl.app
-* superlinked.framework.dsl.executor
-* superlinked.framework.dsl.index
-* superlinked.framework.dsl.query
-* superlinked.framework.dsl.registry
-* superlinked.framework.dsl.source
-* superlinked.framework.dsl.space
-* superlinked.framework.dsl.storage
